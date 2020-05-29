@@ -21,10 +21,24 @@
 class wordList
 {
 private:
-
+vector<string> words;
 
 public:
+vector<string> fileread(string filename) {
+		fstream file;
+		string word;
+		file.open(filename.c_str());
+		while (file >> word) {
+			words.push_back(word);
+		}
+		return words;
+	}
 
+	void fileprint() {
+		for (int i = 0; i < words.size(); i++) {
+			cout << words[i] << endl;
+		}
+	}
 
 };
 
